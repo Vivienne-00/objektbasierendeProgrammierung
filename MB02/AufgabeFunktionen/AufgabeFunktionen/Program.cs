@@ -5,9 +5,17 @@
         static void Main(string[] args)
         {
             int a = 12, b = 16;
+            int[] arr = { 1, 2, 3, 4, 5, 6 };
             Console.WriteLine(MyMath.Calc_ggT(a, b));
             Console.WriteLine(MyMath.Calc_kgV(a, b));
-            Console.WriteLine($"Eingegebene Zahl: {ReadInt()}");
+            //Console.WriteLine($"Eingegebene Zahl: {ReadInt()}");
+            Console.WriteLine(ShowResult("kgV", a, b, MyMath.Calc_kgV(a, b) ));
+            Console.WriteLine(ShowResult("ggT", a, b, MyMath.Calc_ggT_r(a, b)));
+            Console.WriteLine($"Durschnitt von Array: {MyMath.NumericalAverage(arr)}");
+            Console.WriteLine($"kleinste Zahl von Array: {MyMath.SmallestNumber(arr)}");
+            Console.WriteLine($"grösste Zahl von Array: {MyMath.BiggestNumber(arr)}");
+            //MyMath.Swap(ref a, ref b);
+            //Console.WriteLine($"a:{a}, b:{b}");
         }
 
         //Aufgabe 4
@@ -25,26 +33,10 @@
             return i;
         }
 
-        //Aufgabe 5
-        
-        static void ShowResult(int[] arr, int a, int b)
-        { 
-            int ggTZ = MyMath.Calc_ggT(a, b);
-            int KgVZ = MyMath.Calc_kgV(a, b);
-
-          
-            arr[0] = a;
-            arr[1] = b;
-            arr[2] = ggTZ;
-            arr[3] = KgVZ;
-
-            Console.WriteLine($"ggT von {arr[0]} und {arr[1]} ist {arr[2]}");
-            Console.WriteLine($"KgV von {arr[0]} und {arr[1]} ist {arr[3]}");
-
-            /* for (int i = 0; i < arr.Length; i++)
-             {
-                 Console.WriteLine(arr[i]);
-             }*/
+        //Aufgabe 5 + 6
+        private static string ShowResult(string mathType, int a, int b, int result)
+        {
+            return $"{mathType} von {a} und {b} ist {result}";
         }
 
     }

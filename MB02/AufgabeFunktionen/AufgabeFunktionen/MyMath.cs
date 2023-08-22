@@ -41,5 +41,52 @@ namespace AufgabeFunktionen
             return a * b / Calc_ggT(a, b);
         }
 
+        //Aufgabe 8
+
+        public static int NumericalAverage(int[] arr)
+        {
+            int sum = 0;
+            foreach (int v in arr)
+            {
+                sum += v;
+            }
+            return sum / (arr.Length);
+        }
+
+        public static int SmallestNumber(int[] arr)
+        {
+            int smallestNum = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < smallestNum)
+                {
+                    smallestNum = arr[i];
+                }
+            }
+            return smallestNum;
+        }
+        public static int BiggestNumber(int[] arr)
+        {
+            int biggestNum = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > biggestNum)
+                {
+                    biggestNum = arr[i];
+                }
+            }
+            return biggestNum;
+        }
+
+        //Aufgabe 9
+        public static void Swap(ref int a, ref int b)
+        {
+            int z = b;
+            b = a;
+            a = z;
+        }
+
     }
 }
